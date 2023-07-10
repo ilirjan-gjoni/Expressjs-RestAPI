@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 
 const app = express();
 const port = 3000;
@@ -28,6 +30,9 @@ const Person = mongoose.model('Person', personSchema);
 // Parse JSON bodies for POST requests
 app.use(express.json());
 
+app.use(cors());
+
+
 // Handle POST requests to /people
 app.post('/people', async (req, res) => {
   try {
@@ -46,7 +51,7 @@ app.post('/people', async (req, res) => {
 });
 
 // Handle GET requests to /people
-app.get('/people', async (req, res) => {
+app.get('/people/all', async (req, res) => {
   try {
     // Retrieve all people from the database
     const people = await Person.find();
