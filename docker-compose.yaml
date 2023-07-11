@@ -10,10 +10,21 @@ services:
 
   api:
     build:
-      context: .
+      context: ./rest-api-frontend
       dockerfile: Dockerfile
     restart: always
     ports:
       - 3000:3000
     depends_on:
       - mongo
+
+
+  react:
+    build:
+     context: ./rest-api-frontend
+     dockerfile: Dockerfile
+    restart: always   
+    ports:
+      - 80:80
+    depends_on:
+      - api  
