@@ -31,3 +31,26 @@ spec:
     - protocol: TCP
       port: 80  
       targetPort: 80
+     
+
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: react-ingress
+  
+spec:
+  ingressClassName: azure-application-gateway
+  rules:
+  - host: cloudadmin.network
+    http:
+      paths:
+      
+      - path: /
+        backend:
+          service:
+            name: react-service
+            port: 
+              number: 80
+        pathType: Exact
