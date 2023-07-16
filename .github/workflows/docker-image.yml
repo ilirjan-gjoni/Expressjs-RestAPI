@@ -28,4 +28,4 @@ jobs:
           context: .
           file: ./rest-api-frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/reactapp:v2
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/reactapp:v3
