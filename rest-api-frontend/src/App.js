@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, Typography, TextField, Button, Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Paper } from '@mui/material';
 
-const apiUrl = 'http://api-service:3000';
+const apiUrl = "http://cloudadmin.network";
 
 const App = () => {
   const [name, setName] = useState('');
